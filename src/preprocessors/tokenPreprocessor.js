@@ -1,4 +1,4 @@
-import { identity } from '../index';
+import { identity } from '../identity';
 
 export function createTokenPreprocessor(options = { }) {
   options = Object.assign({
