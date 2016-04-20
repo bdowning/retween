@@ -1,6 +1,6 @@
 import expect from 'expect';
 import { identity } from '../../src/index';
-import { createTokenPreprocessor } from '../../src/preprocessors/tokenPreprocessor';
+import createTokenPreprocessor from '../../src/preprocessors/createTokenPreprocessor';
 
 describe('tokenPreprocessor', () => {
   it('passes non-string parameters through unchanged', () => {

@@ -1,6 +1,6 @@
 import expect from 'expect';
 import { identity } from '../../src/index';
-import { createColorPreprocessor } from '../../src/preprocessors/colorPreprocessor';
+import createColorPreprocessor from '../../src/preprocessors/createColorPreprocessor';
 
 describe('colorPreprocessor', () => {
   it('passes states with no strings through unchanged', () => {

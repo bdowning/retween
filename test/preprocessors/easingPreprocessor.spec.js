@@ -1,6 +1,6 @@
 import expect from 'expect';
 import { identity } from '../../src/index';
-import { createEasingPreprocessor } from '../../src/preprocessors/easingPreprocessor';
+import createEasingPreprocessor from '../../src/preprocessors/createEasingPreprocessor';
 
 const customEasing = x => Math.pow(x, 2);
 

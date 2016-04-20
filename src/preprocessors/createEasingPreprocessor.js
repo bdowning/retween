@@ -1,6 +1,6 @@
-import { identity } from '../identity';
+import identity from '../identity';
 
-export function createEasingPreprocessor(easingsMap) {
+export default function createEasingPreprocessor(easingsMap) {
   return (state, easing) => {
     const props = Object.keys(easing).filter(el => typeof easing[el] === 'string');
 

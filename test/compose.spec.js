@@ -1,6 +1,6 @@
 import expect from 'expect';
-import { identity } from '../src/identity';
-import { compose } from '../src/compose';
+import identity from '../src/identity';
+import compose from '../src/compose';
 
 const f = x => x + 'f';
 const g = x => x + 'g';

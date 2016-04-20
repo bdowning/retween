@@ -1,4 +1,4 @@
-import { identity } from '../identity';
+import identity from '../identity';
 
 const hexColor =
   /#([0-9A-Fa-f]{8}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{3})\b/g;
@@ -34,7 +34,7 @@ function convertRgbIntColor(match, rgb, red, green, blue) {
   return `${rgb}(${redP}%, ${greenP}%, ${blueP}%`;
 }
 
-export function createColorPreprocessor() {
+export default function createColorPreprocessor() {
   return (state, easing) => {
     let newState = state;
 

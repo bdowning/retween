@@ -1,6 +1,6 @@
-import { identity } from './identity';
+import identity from './identity';
 
-export function compose(...functions) {
+export default function compose(...functions) {
   let ret = identity;
   for (let i = functions.length - 1; i >= 0; --i) {
     if (ret === identity) {

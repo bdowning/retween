@@ -1,7 +1,14 @@
 export * from './core';
 
-export { createTokenPreprocessor } from './preprocessors/tokenPreprocessor';
-export { createEasingPreprocessor } from './preprocessors/easingPreprocessor';
-export { createColorPreprocessor } from './preprocessors/colorPreprocessor';
+import createTokenPreprocessor from './preprocessors/createTokenPreprocessor';
+import createEasingPreprocessor from './preprocessors/createEasingPreprocessor';
+import createColorPreprocessor from './preprocessors/createColorPreprocessor';
 
-export { easingFormulas } from './easingFormulas';
+import easingFormulas from './easingFormulas';
+
+export {
+  createTokenPreprocessor,
+  createEasingPreprocessor,
+  createColorPreprocessor,
+  easingFormulas,
+};

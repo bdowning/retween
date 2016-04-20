@@ -1,11 +1,8 @@
-import { identity } from './identity';
-import { compose } from './compose';
+import identity from './identity';
+import compose from './compose';
+import identityPreprocessor from './preprocessors/identityPreprocessor';
 
-export function identityPreprocessor(state, easing) {
-  return [ state, easing, identity ];
-}
-
-export function composePreprocessors(...preprocessors) {
+export default function composePreprocessors(...preprocessors) {
   if (preprocessors.length === 0) {
     return identityPreprocessor;
   } else {

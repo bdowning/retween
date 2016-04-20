@@ -2,7 +2,7 @@ function interpolate(from, to, position) {
   return from + (to - from) * position;
 }
 
-export function createInterpolator(state, easing) {
+export default function createInterpolator(state, easing) {
   for (let prop in state) {
     if (typeof state[prop] !== 'number') {
       throw new Error(`Prototype state value ${prop} is not a number`);

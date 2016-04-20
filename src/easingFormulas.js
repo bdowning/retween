@@ -15,9 +15,9 @@
  *  Easing Equations (c) 2003 Robert Penner, all rights reserved.
  */
 
-import { identity } from './identity';
+import identity from './identity';
 
-export const easingFormulas = {
+const easingFormulas = {
   identity: identity,
 
   linear: identity,
@@ -202,3 +202,5 @@ export const easingFormulas = {
     return Math.pow(pos,0.25);
   }
 };
+
+export default easingFormulas;

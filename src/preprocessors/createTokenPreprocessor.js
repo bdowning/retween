@@ -1,6 +1,6 @@
-import { identity } from '../identity';
+import identity from '../identity';
 
-export function createTokenPreprocessor(options = { }) {
+export default function createTokenPreprocessor(options = { }) {
   options = Object.assign({
     defaultPrecision: 2
   }, options);
