@@ -72,4 +72,16 @@ describe('tokenPreprocessor', () => {
     expect(decode({ x__0: 3 }))
       .toEqual({ x: 'transform3d(3.00px)' });
   });
+
+  it('handles negative numbers', () => {
+    const tokenPreprocessor = createTokenPreprocessor();
+
+    const [ outState, outEasing, decode ] =
+            tokenPreprocessor({ x: 'transform3d(-2.54px)' }, { x: [ identity ] });
+
+    expect(outState).toEqual({ x__0: -2.54 });
+    expect(outEasing).toEqual({ x__0: identity });
+    expect(decode({ x__0: 3 }))
+      .toEqual({ x: 'transform3d(3.00px)' });
+  });
 });

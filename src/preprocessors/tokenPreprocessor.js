@@ -17,7 +17,7 @@ export function createTokenPreprocessor(options = { }) {
     const propsInfo = [ ];
 
     for (let prop of props) {
-      const parts = state[prop].split(/\b(\d+(?:\.\d+|\.)?|\.\d+)/);
+      const parts = state[prop].split(/(-?\b(?:\d+(?:\.\d+|\.)?|\.\d+))/);
       const values = [ ];
 
       if (typeof easing[prop] === 'string' && easing[prop].match(/\s/)) {
