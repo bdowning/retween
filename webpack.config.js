@@ -10,7 +10,7 @@ var config = {
     ]
   },
   output: {
-    library: 'ShiftyCore',
+    library: 'Retween',
     libraryTarget: 'umd'
   },
   plugins: [
