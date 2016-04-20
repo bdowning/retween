@@ -9,9 +9,9 @@ describe('tokenPreprocessor', () => {
     const [ outState, outEasing, decode ] =
             tokenPreprocessor({ x: 1, y: 4 }, { x: identity, y: identity });
 
-    expect(outState).toEqual({ x: 1, y: 4 });
-    expect(outEasing).toEqual({ x: identity, y: identity });
-    expect(decode({ x: 3, y: 2 })).toEqual({ x: 3, y: 2 });
+    expect(outState).toBe(outState);
+    expect(outEasing).toBe(outEasing);
+    expect(decode).toBe(identity);
   });
 
   it('preprocesses and decodes simple stringified numbers', () => {

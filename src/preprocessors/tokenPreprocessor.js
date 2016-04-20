@@ -1,3 +1,5 @@
+import { identity } from '../index';
+
 export function createTokenPreprocessor(options = { }) {
   options = Object.assign({
     defaultPrecision: 2
@@ -5,6 +7,11 @@ export function createTokenPreprocessor(options = { }) {
 
   return (state, easing) => {
     const props = Object.keys(state).filter(k => typeof state[k] === 'string');
+
+    if (props.length === 0) {
+      return [ state, easing, identity ];
+    }
+
     const newState = Object.assign({ }, state);
     const newEasing = Object.assign({ }, easing);
     const propsInfo = [ ];
