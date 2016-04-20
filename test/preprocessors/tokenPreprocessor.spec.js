@@ -60,4 +60,16 @@ describe('tokenPreprocessor', () => {
 
     expect(outEasing).toEqual({ x__0: 'customEasing', x__1: 'identity', x__2: 'customEasing' });
   });
+
+  it('does not barf on mid-symbol numbers', () => {
+    const tokenPreprocessor = createTokenPreprocessor();
+
+    const [ outState, outEasing, decode ] =
+            tokenPreprocessor({ x: 'transform3d(1px)' }, { x: [ identity ] });
+
+    expect(outState).toEqual({ x__0: 1 });
+    expect(outEasing).toEqual({ x__0: identity });
+    expect(decode({ x__0: 3 }))
+      .toEqual({ x: 'transform3d(3.00px)' });
+  });
 });
