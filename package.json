@@ -28,6 +28,7 @@
     "eslint": "^2.8.0",
     "expect": "^1.18.0",
     "mocha": "^2.4.5",
+    "mocha-loader": "^0.7.1",
     "webpack": "^1.13.0"
   },
   "dependencies": {}
