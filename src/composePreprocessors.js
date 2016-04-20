@@ -16,7 +16,7 @@ export function composePreprocessors(...preprocessors) {
         const [ innerState, innerEasing, innerDecoder ] =
                 boundComposed(state, easing);
         const [ outerState, outerEasing, outerDecoder ] =
-                preprocessor(innerState, innerDecoder);
+                preprocessor(innerState, innerEasing);
         const combinedDecoder = (outputState) => {
           return innerDecoder(outerDecoder(outputState));
         };
