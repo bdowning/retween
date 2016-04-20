@@ -1,5 +1,5 @@
-shifty-core
-===========
+retween
+=======
 
 A functional take on the interpolation kernel of
 [Shifty](https://github.com/jeremyckahn/shifty).  Ideally something
@@ -74,7 +74,7 @@ Usage strawman
 --------------
 
 ```javascript
-import { createInterpolator, linear } from 'shifty-core';
+import { createInterpolator, linear } from 'retween';
 
 const fromState = { x: 1.0, y: 3.0 };
 const toState = { x: 4.0, y: 1.0 };
@@ -86,7 +86,7 @@ interpolator(fromState, toState, 0.5); // { x: 2.5, y: 2.0 }
 // Works for any states shaped like toState:
 interpolator({ x: 0, y: 0 }, { x: 1, y: 1 }, 0.25); // { x: 0.25, y: 0.25 }
 
-import { tokenPreprocessor } from 'shifty-core-token-preprocessor';
+import { tokenPreprocessor } from 'retween-token-preprocessor';
 const customEasing = (pos) -> Math.pow(pos, 2);
 
 const [ tokenState, tokenEasing, tokenDecoder ] =
@@ -104,8 +104,8 @@ const [ tokenState, tokenEasing, tokenDecoder ] =
 tokenDecoder({ transform__0: 2.3, transform__1: 57 });
     // 'translateX(2.3px) rotate(57deg)'
 
-import { easingFunctions } from 'shifty-core-easing-functions';
-import { createEasingPreprocessor } from 'shifty-core-easing-preprocessor';
+import { easingFunctions } from 'retween-easing-functions';
+import { createEasingPreprocessor } from 'retween-easing-preprocessor';
 
 const easingPreprocessor =
     createEeasingPreprocessor({ ...easingFunctions, customEasing });
@@ -119,7 +119,7 @@ const [ easedState, easedEasing, easedDecoder ]
 // }
 // easedDecoder === identity
 
-import { composePreprocessors } from 'shifty-core';
+import { composePreprocessors } from 'retween';
 
 const easedTokenPP =
     composePreprocessors(easingPreprocessor, tokenPreprocessor);

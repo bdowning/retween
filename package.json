@@ -1,5 +1,5 @@
 {
-  "name": "shifty-core",
+  "name": "retween",
   "version": "0.0.1",
   "description": "A functional reimagining of the Shifty interpolation kernel",
   "main": "lib/index.js",
