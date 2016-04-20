@@ -20,6 +20,10 @@ export function createTokenPreprocessor(options = { }) {
       const parts = state[prop].split(/(\d+(?:\.\d+|\.)?|\.\d+)/);
       const values = [ ];
 
+      if (typeof easing[prop] === 'string' && easing[prop].match(/\s/)) {
+        easing[prop] = easing[prop].split(/\s+/);
+      }
+
       for (let i = 1; i < parts.length; i += 2) {
         values.push({
           value: parts[i],

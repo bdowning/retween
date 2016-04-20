@@ -47,4 +47,15 @@ describe('tokenPreprocessor', () => {
 
     expect(outEasing).toEqual({ x__0: customEasing, x__1: identity, x__2: customEasing });
   });
+
+  it('allows multiple easings as a space-separated string', () => {
+    const customEasing = x => x;
+    const tokenPreprocessor = createTokenPreprocessor();
+
+    const [ outState, outEasing, decode ] =
+            tokenPreprocessor({ x: 'transformX(1px) rotate(5deg) scale(0.27)' },
+                              { x: 'customEasing identity customEasing' });
+
+    expect(outEasing).toEqual({ x__0: 'customEasing', x__1: 'identity', x__2: 'customEasing' });
+  });
 });
