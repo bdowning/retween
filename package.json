@@ -8,8 +8,10 @@
     "test": "cross-env BABEL_ENV=commonjs mocha --compilers js:babel-register --recursive",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/shifty-core.js",
-    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/shifty-core.min.js"
+    "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/retween.js",
+    "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/retween.min.js",
+    "build:umd-core": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/core.js dist/retween.core.js",
+    "build:umd-core:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/core.js dist/retween.core.min.js"
   },
   "repository": {
     "type": "git",
