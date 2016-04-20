@@ -4,3 +4,5 @@ export { identityPreprocessor, composePreprocessors } from './composePreprocesso
 
 export { createTokenPreprocessor } from './preprocessors/tokenPreprocessor';
 export { createEasingPreprocessor } from './preprocessors/easingPreprocessor';
+
+export { easingFormulas } from './easingFormulas';
