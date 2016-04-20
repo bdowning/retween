@@ -6,11 +6,13 @@ describe('tokenPreprocessor', () => {
   it('passes non-string parameters through unchanged', () => {
     const tokenPreprocessor = createTokenPreprocessor();
 
-    const [ outState, outEasing, decode ] =
-            tokenPreprocessor({ x: 1, y: 4 }, { x: identity, y: identity });
+    const state = { x: 1, y: 4 };
+    const easing = { x: identity, y: identity };
 
-    expect(outState).toBe(outState);
-    expect(outEasing).toBe(outEasing);
+    const [ outState, outEasing, decode ] = tokenPreprocessor(state, easing);
+
+    expect(outState).toBe(state);
+    expect(outEasing).toBe(easing);
     expect(decode).toBe(identity);
   });
 
