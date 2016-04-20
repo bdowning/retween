@@ -64,4 +64,14 @@ describe('composePreprocessors', () => {
     expect(doubleDesDecoder(desDoubleState))
       .toEqual({ x: 1, y: 1, strX: '0.5', strY: '0.5' });
   });
+
+  it('eliminates identity decoders from composed preprocessor', () => {
+    const preprocessor = composePreprocessors(identityPreprocessor,
+                                              identityPreprocessor,
+                                              identityPreprocessor);
+
+    const [ state, easing, decoder ] = preprocessor({ }, { });
+
+    expect(decoder).toBe(identity);
+  });
 });

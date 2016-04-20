@@ -1,4 +1,5 @@
 import { identity } from './identity';
+import { compose } from './compose';
 
 export function identityPreprocessor(state, easing) {
   return [ state, easing, identity ];
@@ -17,9 +18,7 @@ export function composePreprocessors(...preprocessors) {
                 boundComposed(state, easing);
         const [ outerState, outerEasing, outerDecoder ] =
                 preprocessor(innerState, innerEasing);
-        const combinedDecoder = (outputState) => {
-          return innerDecoder(outerDecoder(outputState));
-        };
+        const combinedDecoder = compose(innerDecoder, outerDecoder);
         return [ outerState, outerEasing, combinedDecoder ];
       };
     }
