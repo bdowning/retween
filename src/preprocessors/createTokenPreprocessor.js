@@ -36,7 +36,7 @@ export default function createTokenPreprocessor(options = { }) {
   }, options);
 
   return (state, easing) => {
-    const props = Object.keys(state).filter(k => typeof state[k] === 'string');
+    const props = Object.keys(state).filter(k => typeof state[k] === 'string').sort();
 
     if (props.length === 0) {
       return [ state, easing, identity ];
