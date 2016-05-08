@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bdowning/shifty-core.git"
+    "url": "https://github.com/bdowning/retween.git"
   },
   "authors": [
     "Brian Downing <bdowning@lavos.net>"
