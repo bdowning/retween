@@ -37,10 +37,6 @@ function getInterpolateFunction(props, state, easing, cacheKey) {
   return interpolateFunctionCache[cacheKey];
 }
 
-function interpolate(from, to, position) {
-  return from + (to - from) * position;
-}
-
 export default function createInterpolator(state, easing) {
   const props = Object.keys(state).sort();
   const sig = [ ];
@@ -63,11 +59,4 @@ export default function createInterpolator(state, easing) {
   const cacheKey = sig.join('!!!');
 
   return getInterpolateFunction(props, state, easing, cacheKey);
-  return (fromState, toState, position, outputState = { }) => {
-    for (let prop in state) {
-      outputState[prop] =
-        interpolate(fromState[prop], toState[prop], easing[prop](position));
-    }
-    return outputState;
-  };
 }
