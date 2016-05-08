@@ -1,6 +1,6 @@
 {
   "name": "retween",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A functional reimagining of the Shifty interpolation kernel",
   "main": "lib/index.js",
   "scripts": {
